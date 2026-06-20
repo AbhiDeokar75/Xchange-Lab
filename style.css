@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:92%;
+    max-width:1200px;
+    height:75px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 35px;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
+
+    z-index:1000;
+}
+
+.nav-logo i {
+    color: yellow;
+}
+
+.nav-logo{
+    font-size:28px;
+    font-weight:700;
+    color:rgb(255, 255, 255);
+}
+
+.nav-logo span{
+    margin-left:8px;
+}
+
+.nav-badge{
+    background:rgba(255,255,255,.18);
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  margin-top: 30px;
+  max-width: 430px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 25px;
+  padding: 35px;
+  color: white;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  animation: fadeIn 0.6s ease;
+  margin-top: 50px;
+  position: fixed;
+}
+
+.container h2{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.container p{
+    text-align:center;
+    opacity:.87;
+}
+
+form{
+    margin-top:25px;
+}
+
+.amount p{
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+form input{
+    width:100%;
+    height:55px;
+    border-radius:14px;
+    border:none;
+    outline:none;
+    padding:0 18px;
+    font-size:18px;
+    background:white;
+    color:#333;
+    transition:.3s;
+}
+
+form input:focus{
+    box-shadow:0 0 0 4px rgba(255,255,255,.25);
+}
+
+.dropdown{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:35px 0;
+}
+
+.from,
+.to{
+    width:42%;
+}
+
+.from p,
+.to p{
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.select-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    border-radius:14px;
+    padding:10px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.select-container img{
+    width:38px;
+    margin-right:10px;
+}
+
+.select-container select{
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:transparent;
+    cursor:pointer;
+}
+
+.dropdown i{
+    font-size:28px;
+    color:white;
+    margin-top:30px;
+    transition:.3s;
+}
+
+.dropdown i:hover{
+    transform:rotate(180deg);
+}
+
+.msg{
+    text-align:center;
+    margin:30px 0;
+    background:rgba(255,255,255,.15);
+    padding:15px;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:600;
+}
+
+button{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#06b6d4,#3b82f6);
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 35px rgba(0,0,0,.3);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:480px){
+
+    .container{
+        padding:25px;
+    }
+
+    .dropdown{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .from,
+    .to{
+        width:100%;
+    }
+
+    .dropdown i{
+        transform:rotate(90deg);
+        margin:0;
+    }
+}
