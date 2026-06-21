@@ -40,6 +40,10 @@ const updateExchangeRate = async () => {
     amount.value = "1";
   }
 
+  // Show loading state
+  btn.innerText = "Converting...";
+  btn.disabled = true;
+
   const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
 
   try {
@@ -59,8 +63,28 @@ const updateExchangeRate = async () => {
   } catch (error) {
     console.error(error);
     msg.innerText = "Unable to fetch exchange rate.";
+  } finally {
+    // Reset button whether request succeeds or fails
+    btn.innerText = "Get Exchange Rate";
+    btn.disabled = false;
   }
 };
+
+const swapIcon = document.querySelector(".dropdown i");
+
+swapIcon.addEventListener("click", () => {
+  const temp = fromCurr.value;
+
+  fromCurr.value = toCurr.value;
+
+  toCurr.value = temp;
+
+  updateFlag(fromCurr);
+
+  updateFlag(toCurr);
+
+  updateExchangeRate();
+});
 
 // Update country flag
 function updateFlag(element) {
