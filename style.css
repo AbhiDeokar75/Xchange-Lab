@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 
-/* NAVBAR */
-
 .navbar{
     position:fixed;
     top:20px;
@@ -70,10 +68,10 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 30px;
   background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
-  padding: 20px;
+  padding: 120px 20px 40px; /* Change made;*/
 }
 
 .container {
@@ -89,8 +87,8 @@ body {
   color: white;
   box-shadow: 0 25px 50px rgba(0,0,0,0.25);
   animation: fadeIn 0.6s ease;
-  margin-top: 50px;
-  position: fixed;
+  margin-top: 10px;
+  /* position: fixed; */
 }
 
 .container h2{
@@ -207,11 +205,6 @@ button{
     box-shadow:0 15px 30px rgba(0,0,0,.2);
 }
 
-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 20px 35px rgba(0,0,0,.3);
-}
-
 button:active{
     transform:scale(.98);
 }
@@ -227,24 +220,119 @@ button:active{
     }
 }
 
-@media(max-width:480px){
+@media (max-width:768px){
+
+    .navbar{
+
+        height:auto;
+
+        flex-direction:column;
+
+        gap:12px;
+
+        padding:18px;
+
+        border-radius:18px;
+    }
+
+    .nav-logo{
+
+        font-size:24px;
+
+        text-align:center;
+    }
+
+    .nav-badge{
+
+        font-size:15px;
+
+        padding:8px 16px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    body{
+
+        padding:150px 15px 30px;
+    }
 
     .container{
-        padding:25px;
+
+        max-width:100%;
+
+        padding:24px;
+    }
+
+    .container h2{
+
+        font-size:28px;
+    }
+
+    .container>p{
+
+        font-size:14px;
     }
 
     .dropdown{
+
         flex-direction:column;
-        gap:20px;
+
+        gap:18px;
+
+        align-items:stretch;
     }
 
     .from,
     .to{
+
         width:100%;
     }
 
     .dropdown i{
-        transform:rotate(90deg);
+
         margin:0;
+
+        transform:rotate(90deg);
+
+        align-self:center;
     }
+
+    .select-container{
+
+        width:100%;
+    }
+
+    form input{
+
+        font-size:17px;
+    }
+
+    button{
+
+        height:54px;
+
+        font-size:17px;
+    }
+
+    .msg{
+
+        font-size:16px;
+
+        line-height:1.5;
+    }
+
+}
+
+button{
+
+    transition:.3s ease;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
 }
